@@ -50,7 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\GruposBLL.cs" />
     <Compile Include="DAL\Scripts\Contexto.cs" />
+    <Compile Include="Entidades\Grupos.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,16 +106,17 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="Entidades\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DAL\Scripts\SQLQuery1.sql" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\new2.png" />
     <None Include="Resources\Modificar.png" />
     <None Include="Resources\find.png" />
     <None Include="Resources\Delete.png" />
     <None Include="Resources\imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Scripts\SQLQuery1.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,5 +15,10 @@ namespace PrimerParcial
         {
             InitializeComponent();
         }
+
+        private void personasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

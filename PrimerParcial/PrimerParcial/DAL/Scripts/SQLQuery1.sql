@@ -1,9 +1,13 @@
-CREATE DATABASE PrimerParcialDb
+CREATE DATABASE Parcial1Db
 GO
-USE PrimerParcialDb
+USE Parcial1Db
 GO
-CREATE TABLE Parcial
+CREATE TABLE Grupos
 (
-	Id int primary key identity,
+	GruposId int primary key identity(1,1),
+	Fecha DateTime,
+	Descripcion varchar(max),
+	Cantidad int(40),
+	Integrantes int (50),
 
-)
+);
