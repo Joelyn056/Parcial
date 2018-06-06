@@ -1,28 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using PrimerParcial.Entidades;
+using System.Data.Entity;
 using PrimerParcial.DAL;
-using System.Linq.Expressions;
 using PrimerParcial.DAL.Scripts;
 using PrimerParcial.BLL;
-using System.Threading.Tasks;
 
 
 namespace PrimerParcial.BLL
-
 {
     public class GrupoBLL
     {
-        public static bool Guardar(Grupos grupos)
+        public static bool Guardar(Grupos grupo)
         {
             bool paso = false;
 
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.grupos.Add(grupos) != null)
+                if (contexto.grupos.Add(grupo) != null)
                 {
                     contexto.SaveChanges();
                     paso = true;
@@ -38,14 +37,14 @@ namespace PrimerParcial.BLL
         }
 
 
-        public static bool Modificar(Grupos grupos)
+        public static bool Modificar(Grupos grupo)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                contexto.Entry(grupos).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
+                contexto.Entry(grupo).State = EntityState.Modified;
+                if(contexto.SaveChanges() > 0)
                 {
                     paso = true;
                 }
@@ -122,6 +121,6 @@ namespace PrimerParcial.BLL
     }
 }
 
-    }
+    
 
    

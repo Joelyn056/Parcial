@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq.Expressions;
+using PrimerParcial.BLL;
+using PrimerParcial.Entidades;
 
 namespace PrimerParcial.UI.Consultas
 {
@@ -19,40 +22,43 @@ namespace PrimerParcial.UI.Consultas
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             {
-                
+
                 Expression<Func<Grupos, bool>> filtro = x => true;
 
                 int id;
                 switch (FiltrarComboBox.SelectedIndex)
                 {
-                    case 0:
+                    case 0://id
                         id = Convert.ToInt32(CriteriotextBox.Text);
-                        filtro = x => x.GruposID == id;
+                        filtro = x => (x.GruposID == id) && (x.Fecha >= Desde_dateTimePicker.Value.Date && x.Fecha <= Hasta_dateTimePicker.Value.Date);
                         break;
-                    case 1:
-                        filtro = x => x.GruposId.Contains(CriteriotextBox.Text);
+                    case 1://descripcion
+                        filtro = x => (x.Descripcion.Contains(CriteriotextBox.Text)) && (x.Fecha >= Desde_dateTimePicker.Value.Date && x.Fecha <= Hasta_dateTimePicker.Value.Date);
                         break;
-                    case 2:
-                        filtro = x => x.Fecha.Equals(CriteriotextBox.Text);
+                    case 2://cantidad
+                        id = Convert.ToInt32(CriteriotextBox.Text);
+                        filtro = x => (x.Cantidad.Equals(id)) && (x.Fecha >= Desde_dateTimePicker.Value.Date && x.Fecha <= Hasta_dateTimePicker.Value.Date);
                         break;
-                    case 3:
-                        filtro = x => x.Descripcion.Contains(CriteriotextBox.Text);
+                    case 3://grupo
+                        id = Convert.ToInt32(CriteriotextBox.Text);
+                        filtro = x => (x.grupos1.Equals(id)) && (x.Fecha >= Desde_dateTimePicker.Value.Date && x.Fecha <= Hasta_dateTimePicker.Value.Date);
                         break;
-                    case 4:
-                        filtro = x => x.Cantidad.Equals(CriteriotextBox.Text);
+                    case 4://integrantes
+                        id = Convert.ToInt32(CriteriotextBox.Text);
+                        filtro = x => (x.Integrantes.Equals(id)) && (x.Fecha >= Desde_dateTimePicker.Value.Date && x.Fecha <= Hasta_dateTimePicker.Value.Date);
                         break;
-                    case 5:
-                        filtro = x => x.Integrantes.Equals(CriteriotexBox.Text);
-                        break;
-                            }
+                    
+                   
+                 }
 
 
-                ConsultadataGridView.DataSource = BLL.GetList(filtro);
+                ConsultarDataGridView.DataSource = BLL.GrupoBLL.GetList(filtro);
             }
 
+        }
 
-
-
+        private void FiltrarComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

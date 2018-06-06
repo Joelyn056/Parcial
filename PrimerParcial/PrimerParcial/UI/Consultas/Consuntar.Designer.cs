@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ConsultarDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FiltrarComboBox = new System.Windows.Forms.ComboBox();
@@ -37,25 +37,25 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Desde_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Hasta_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultarDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // ConsultarDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 164);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(642, 226);
-            this.dataGridView1.TabIndex = 0;
+            this.ConsultarDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultarDataGridView.Location = new System.Drawing.Point(23, 164);
+            this.ConsultarDataGridView.Name = "ConsultarDataGridView";
+            this.ConsultarDataGridView.Size = new System.Drawing.Size(642, 226);
+            this.ConsultarDataGridView.TabIndex = 0;
             // 
             // label1
             // 
@@ -80,10 +80,17 @@
             // FiltrarComboBox
             // 
             this.FiltrarComboBox.FormattingEnabled = true;
+            this.FiltrarComboBox.Items.AddRange(new object[] {
+            "GruposID",
+            "Descripcion",
+            "Cantidad",
+            "Grupos",
+            "Integrantes"});
             this.FiltrarComboBox.Location = new System.Drawing.Point(75, 12);
             this.FiltrarComboBox.Name = "FiltrarComboBox";
             this.FiltrarComboBox.Size = new System.Drawing.Size(141, 21);
             this.FiltrarComboBox.TabIndex = 5;
+            this.FiltrarComboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrarComboBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -130,7 +137,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.CriteriotextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.FiltrarComboBox);
@@ -140,12 +147,12 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // CriteriotextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(301, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 20);
-            this.textBox1.TabIndex = 8;
+            this.CriteriotextBox.Location = new System.Drawing.Point(301, 13);
+            this.CriteriotextBox.Name = "CriteriotextBox";
+            this.CriteriotextBox.Size = new System.Drawing.Size(216, 20);
+            this.CriteriotextBox.TabIndex = 8;
             // 
             // groupBox2
             // 
@@ -153,8 +160,8 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.Desde_dateTimePicker);
+            this.groupBox2.Controls.Add(this.Hasta_dateTimePicker);
             this.groupBox2.Location = new System.Drawing.Point(85, 116);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(513, 28);
@@ -189,21 +196,21 @@
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 2;
             // 
-            // dateTimePicker2
+            // Desde_dateTimePicker
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(88, 5);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(160, 20);
-            this.dateTimePicker2.TabIndex = 1;
+            this.Desde_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Desde_dateTimePicker.Location = new System.Drawing.Point(88, 5);
+            this.Desde_dateTimePicker.Name = "Desde_dateTimePicker";
+            this.Desde_dateTimePicker.Size = new System.Drawing.Size(160, 20);
+            this.Desde_dateTimePicker.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // Hasta_dateTimePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(329, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(178, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.Hasta_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Hasta_dateTimePicker.Location = new System.Drawing.Point(329, 5);
+            this.Hasta_dateTimePicker.Name = "Hasta_dateTimePicker";
+            this.Hasta_dateTimePicker.Size = new System.Drawing.Size(178, 20);
+            this.Hasta_dateTimePicker.TabIndex = 0;
             // 
             // Consuntar
             // 
@@ -217,10 +224,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ConsultarDataGridView);
             this.Name = "Consuntar";
             this.Text = "Consultar";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultarDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -232,7 +239,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ConsultarDataGridView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label1;
@@ -241,10 +248,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox CriteriotextBox;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Desde_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker Hasta_dateTimePicker;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

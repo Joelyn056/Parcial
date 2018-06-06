@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.GruposID = new System.Windows.Forms.Label();
+            this.GruposIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.Fecha = new System.Windows.Forms.Label();
+            this.Decripcion = new System.Windows.Forms.Label();
+            this.Cantidad = new System.Windows.Forms.Label();
+            this.grupos1 = new System.Windows.Forms.Label();
+            this.Integrantes = new System.Windows.Forms.Label();
             this.DescripciontextBox1 = new System.Windows.Forms.TextBox();
             this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.GruposNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.GrupoNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.IntegrantesNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.GruposIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GruposNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrupoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IntegrantesNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,22 +61,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Registro";
             // 
-            // label2
+            // GruposID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "GruposID";
+            this.GruposID.AutoSize = true;
+            this.GruposID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GruposID.Location = new System.Drawing.Point(24, 86);
+            this.GruposID.Name = "GruposID";
+            this.GruposID.Size = new System.Drawing.Size(59, 15);
+            this.GruposID.TabIndex = 1;
+            this.GruposID.Text = "GruposID";
             // 
-            // IDnumericUpDown
+            // GruposIDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(95, 84);
-            this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(189, 20);
-            this.IDnumericUpDown.TabIndex = 2;
+            this.GruposIDnumericUpDown.Location = new System.Drawing.Point(95, 84);
+            this.GruposIDnumericUpDown.Name = "GruposIDnumericUpDown";
+            this.GruposIDnumericUpDown.Size = new System.Drawing.Size(189, 20);
+            this.GruposIDnumericUpDown.TabIndex = 2;
             // 
             // Eliminarbutton
             // 
@@ -128,51 +128,52 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
-            // label3
+            // Fecha
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Fecha";
+            this.Fecha.AutoSize = true;
+            this.Fecha.Location = new System.Drawing.Point(27, 133);
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Size = new System.Drawing.Size(37, 13);
+            this.Fecha.TabIndex = 7;
+            this.Fecha.Text = "Fecha";
             // 
-            // label4
+            // Decripcion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Descripcion";
+            this.Decripcion.AutoSize = true;
+            this.Decripcion.Location = new System.Drawing.Point(29, 172);
+            this.Decripcion.Name = "Decripcion";
+            this.Decripcion.Size = new System.Drawing.Size(63, 13);
+            this.Decripcion.TabIndex = 8;
+            this.Decripcion.Text = "Descripcion";
             // 
-            // label5
+            // Cantidad
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 212);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Cantidad";
+            this.Cantidad.AutoSize = true;
+            this.Cantidad.Location = new System.Drawing.Point(30, 212);
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Size = new System.Drawing.Size(49, 13);
+            this.Cantidad.TabIndex = 9;
+            this.Cantidad.Text = "Cantidad";
             // 
-            // label6
+            // grupos1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 253);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Grupos";
+            this.grupos1.AutoSize = true;
+            this.grupos1.Location = new System.Drawing.Point(36, 253);
+            this.grupos1.Name = "grupos1";
+            this.grupos1.Size = new System.Drawing.Size(41, 13);
+            this.grupos1.TabIndex = 10;
+            this.grupos1.Text = "Grupos";
             // 
-            // label7
+            // Integrantes
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 287);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Integrantes";
+            this.Integrantes.AutoSize = true;
+            this.Integrantes.Location = new System.Drawing.Point(33, 287);
+            this.Integrantes.Name = "Integrantes";
+            this.Integrantes.Size = new System.Drawing.Size(60, 13);
+            this.Integrantes.TabIndex = 11;
+            this.Integrantes.Text = "Integrantes";
             // 
             // DescripciontextBox1
             // 
@@ -188,28 +189,32 @@
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(185, 20);
             this.CantidadNumericUpDown.TabIndex = 13;
+            this.CantidadNumericUpDown.ValueChanged += new System.EventHandler(this.CantidadNumericUpDown_ValueChanged);
             // 
-            // GruposNumericUpDown
+            // GrupoNumericUpDown
             // 
-            this.GruposNumericUpDown.Location = new System.Drawing.Point(99, 249);
-            this.GruposNumericUpDown.Name = "GruposNumericUpDown";
-            this.GruposNumericUpDown.Size = new System.Drawing.Size(185, 20);
-            this.GruposNumericUpDown.TabIndex = 14;
+            this.GrupoNumericUpDown.Location = new System.Drawing.Point(99, 249);
+            this.GrupoNumericUpDown.Name = "GrupoNumericUpDown";
+            this.GrupoNumericUpDown.Size = new System.Drawing.Size(185, 20);
+            this.GrupoNumericUpDown.TabIndex = 14;
+            this.GrupoNumericUpDown.ValueChanged += new System.EventHandler(this.GrupoNumericUpDown_ValueChanged);
             // 
             // IntegrantesNumericUpDown
             // 
             this.IntegrantesNumericUpDown.Location = new System.Drawing.Point(99, 282);
             this.IntegrantesNumericUpDown.Name = "IntegrantesNumericUpDown";
+            this.IntegrantesNumericUpDown.ReadOnly = true;
             this.IntegrantesNumericUpDown.Size = new System.Drawing.Size(185, 20);
             this.IntegrantesNumericUpDown.TabIndex = 15;
+            
             // 
-            // DateTimePicker
+            // FechaDateTimePicker
             // 
-            this.DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimePicker.Location = new System.Drawing.Point(99, 125);
-            this.DateTimePicker.Name = "DateTimePicker";
-            this.DateTimePicker.Size = new System.Drawing.Size(185, 20);
-            this.DateTimePicker.TabIndex = 16;
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(99, 125);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(185, 20);
+            this.FechaDateTimePicker.TabIndex = 16;
             // 
             // Registro
             // 
@@ -217,28 +222,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(425, 420);
-            this.Controls.Add(this.DateTimePicker);
+            this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.IntegrantesNumericUpDown);
-            this.Controls.Add(this.GruposNumericUpDown);
+            this.Controls.Add(this.GrupoNumericUpDown);
             this.Controls.Add(this.CantidadNumericUpDown);
             this.Controls.Add(this.DescripciontextBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Integrantes);
+            this.Controls.Add(this.grupos1);
+            this.Controls.Add(this.Cantidad);
+            this.Controls.Add(this.Decripcion);
+            this.Controls.Add(this.Fecha);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.BuscarButton);
-            this.Controls.Add(this.IDnumericUpDown);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.GruposIDnumericUpDown);
+            this.Controls.Add(this.GruposID);
             this.Controls.Add(this.label1);
             this.Name = "Registro";
             this.Text = "Registro De Personas";
-            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GruposIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GruposNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrupoNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IntegrantesNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -248,21 +253,21 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
+        private System.Windows.Forms.Label GruposID;
+        private System.Windows.Forms.NumericUpDown GruposIDnumericUpDown;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label Fecha;
+        private System.Windows.Forms.Label Decripcion;
+        private System.Windows.Forms.Label Cantidad;
+        private System.Windows.Forms.Label grupos1;
+        private System.Windows.Forms.Label Integrantes;
         private System.Windows.Forms.TextBox DescripciontextBox1;
         private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
-        private System.Windows.Forms.NumericUpDown GruposNumericUpDown;
+        private System.Windows.Forms.NumericUpDown GrupoNumericUpDown;
         private System.Windows.Forms.NumericUpDown IntegrantesNumericUpDown;
-        private System.Windows.Forms.DateTimePicker DateTimePicker;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
     }
 }

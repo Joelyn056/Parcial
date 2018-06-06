@@ -5,7 +5,6 @@ using System.Text;
 using System.ComponentModel.DataAnnotations;
 
 
-
 namespace PrimerParcial.Entidades
 {
     public class Grupos
@@ -13,20 +12,21 @@ namespace PrimerParcial.Entidades
         [Key]
 
         public int GruposID { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public string Descripcion { get; set; }
-        public string Cantidad { get; set; }
-        public string Integrantes { get; set; }
+        public int Cantidad { get; set; }
+        public int Integrantes { get; set; }
+        public int grupos1 { get; set; }
 
         public Grupos()
         {
             GruposID = 0;
-            Fecha = string.Empty;
+            Fecha = DateTime.Now;
             Descripcion = string.Empty;
-            Cantidad = string.Empty;
-            Integrantes = string.Empty;
-            
-             
+            Cantidad = 0;
+            Integrantes = 0;
+            grupos1 = 0;
+                    
         }
 
     }
